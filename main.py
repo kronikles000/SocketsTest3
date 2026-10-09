@@ -2,13 +2,12 @@ import socket
 import threading as threading
 import random as random
 anonnum = random.randint(1,200000)
-print(f'Your username: Anon{anonnum}')
 
-#s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#s.connect(('8.8.8.8', 80))
-#ip = s.getsockname()[0]
-##print(ip) #prints ip
-#s.close
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(('8.8.8.8', 80))
+ip = s.getsockname()[0]
+print(ip) #prints ip
+s.close
 
 ip = input('Enter IP to connect to (not port)')
 
@@ -22,6 +21,8 @@ while True:
         break
     else:
         print('try again')
+
+print(f'Your username: Anon{anonnum}')
 
 try:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
