@@ -41,7 +41,7 @@ try:
             client.sendall((f'Anon{anonnum}: {tosend}').encode())
     
     threading.Thread(target=send, daemon=True).start()
-except ConnectionRefusedError:
+except:
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind(('0.0.0.0', port))
     server.listen()
