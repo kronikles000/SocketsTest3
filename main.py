@@ -9,7 +9,7 @@ ip = s.getsockname()[0]
 print(ip) #prints ip
 s.close
 
-ip = input('Enter IP to connect to (not port)')
+ip = input('Enter IP to connect to (not port): ')
 
 while True:
     basicportq = input('Connect to main room? (y/n): ')
