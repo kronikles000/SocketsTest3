@@ -5,11 +5,14 @@ anonnum = random.randint(1,200000)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(('8.8.8.8', 80))
-ip = s.getsockname()[0]
-print(ip) #prints ip
+localip = s.getsockname()[0]
+print(localip) #prints ip
 s.close
 
-ip = input('Enter IP to connect to (not port): ')
+ip = input('Enter IP to connect to (not port) type "local" if your hosting: ')
+if ip.lower() == 'local':
+    ip = localip
+    print('hosting locally')
 
 while True:
     basicportq = input('Connect to main room? (y/n): ')
